@@ -1,9 +1,9 @@
 package com.example.demo.entities;
 
-public class users {
-	private int id;
-	private String email;
-	private String password;
+public class User {
+	public int id;
+	public String email;
+	public String password;
 	private String imageUrl;
 	private String country;
 	private String name ;
@@ -13,7 +13,7 @@ public class users {
 	private String blood_group;
 	private String dob;
 	private int weight;
-	public users(int id, String email, String imageUrl, String country, String name, int contact, String blood_group,
+	public User(int id, String email, String imageUrl, String country, String name, int contact, String blood_group,
 			String dob, int weight, int height) {
 		super();
 		this.id = id;
@@ -32,10 +32,15 @@ public class users {
 		return id;
 	}
 	
-	public users(String email, String password) {
+	public User(String email, String password) {
 		super();
 		this.email = email;
 		this.password = password;
+	}
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getEmail() {
@@ -112,7 +117,7 @@ public class users {
 	}
 
 	private int height;
-	public users(String email, String password, String country, String name, int contact, String dob) {
+	public User(String email, String password, String country, String name, int contact, String dob) {
 		super();
 		this.email = email;
 		this.password = password;
