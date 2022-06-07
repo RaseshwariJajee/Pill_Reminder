@@ -1,0 +1,130 @@
+package com.example.demo.entities;
+
+public class users {
+	private int id;
+	private String email;
+	private String password;
+	private String imageUrl;
+	private String country;
+	private String name ;
+	private int contact;
+	private String isDependent;
+	private String relationship;
+	private String blood_group;
+	private String dob;
+	private int weight;
+	public users(int id, String email, String imageUrl, String country, String name, int contact, String blood_group,
+			String dob, int weight, int height) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.imageUrl = imageUrl;
+		this.country = country;
+		this.name = name;
+		this.contact = contact;
+		this.blood_group = blood_group;
+		this.dob = dob;
+		this.weight = weight;
+		this.height = height;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public users(String email, String password) {
+		super();
+		this.email = email;
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getContact() {
+		return contact;
+	}
+	public void setContact(int contact) {
+		this.contact = contact;
+	}
+	public String getIsDependent() {
+		return isDependent;
+	}
+	public void setIsDependent(String isDependent) {
+		this.isDependent = isDependent;
+	}
+	public String getRelationship() {
+		return relationship;
+	}
+	public void setRelationship(String relationship) {
+		this.relationship = relationship;
+	}
+	public String getBlood_group() {
+		return blood_group;
+	}
+	public void setBlood_group(String blood_group) {
+		this.blood_group = blood_group;
+	}
+	public String getDob() {
+		return dob;
+	}
+	public void setDob(String dob) {
+		this.dob = dob;
+	}
+	public int getWeight() {
+		return weight;
+	}
+	public void setWeight(int weight) {
+		this.weight = weight;
+	}
+	public int getHeight() {
+		return height;
+	}
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	private int height;
+	public users(String email, String password, String country, String name, int contact, String dob) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.country = country;
+		this.name = name;
+		this.contact = contact;
+		this.dob = dob;
+	}
+	
+	
+	
+	
+	
+
+}
