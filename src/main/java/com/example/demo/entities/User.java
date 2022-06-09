@@ -73,10 +73,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getContact() {
+	public long getContact() {
 		return contact;
 	}
-	public void setContact(int contact) {
+	public void setContact(long contact) {
 		this.contact = contact;
 	}
 	public String getIsDependent() {
