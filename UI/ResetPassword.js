@@ -21,11 +21,12 @@ $(document).ready(function() {
         
             
             var pobj={
-                "email" : "xyz@gmail.com",
+                "email" : "vishal@gmail.com",
                 "password":$('#Oldpassword').val(),
-                "newpassword":$('#newpassword2').val()
+                "newPassword":$('#newpassword2').val()
                 
             };
+            
             $.ajax({
                 url:'http://localhost:8080/reset_password',
                 dataType:'json',
