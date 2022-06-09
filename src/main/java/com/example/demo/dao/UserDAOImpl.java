@@ -47,12 +47,14 @@ public class UserDAOImpl implements UserDAO{
 			String bg = "NULL";
 			int weightuser = 0;
 			int heightuser = 0;
-			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.email+ "','"+u.password +"','"+ img +"','"+u.country+"','"+u.name+"',"+u.contact+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.dob+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
-			//System.out.println(useradd);
+			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.getEmail()+ "','"+u.getPassword() +"','"+ img +"','"+u.getCountry()+"','"+u.getName()+"',"+u.getContact()+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.getDob()+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
+			System.out.println(useradd);
 			int rs = st.executeUpdate(useradd);
 			
             s=true;
             }catch(Exception ex) {
+            	
+            	
             	System.out.println(ex);
                    
             }
@@ -69,11 +71,11 @@ public class UserDAOImpl implements UserDAO{
 		try {
 			
 		            
-		            ResultSet rs=st.executeQuery("select email_id,password from Users where email_id='"+u.email+"'");
+		            ResultSet rs=st.executeQuery("select email_id,password from Users where email_id='"+u.getEmail()+"'");
 		            while(rs.next()) {
 		            	
 		            	
-		            	if(rs.getString("email_id").equals(u.email)&&rs.getString("password").equals(u.password))
+		            	if(rs.getString("email_id").equals(u.getEmail())&&rs.getString("password").equals(u.getPassword()))
 		            	{
 		            	s=true;
 		            	}

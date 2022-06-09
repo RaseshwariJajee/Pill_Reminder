@@ -25,6 +25,7 @@ public class UserServiceImpl implements UserServices{
 	@Override
 	public String loginCredentials(User u) {
 		Boolean s;
+		
         
         UserDAOImpl c=new UserDAOImpl();
        
