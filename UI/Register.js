@@ -39,12 +39,15 @@ $(document).ready(function() {
                 {
                     msg=Record.responseText;
                     alert(msg);
-                    window.location.reload("http://localhost/SDSite/Pill/Login.html");
+                    window.location.href="Login.html";
                 },
                 error:function(err)
                 {
                     msg=err.responseText;
                     alert(msg);
+                    if(msg == "Registered Successfully"){
+                        window.location.href="Login.html";
+                        }
                 }
             }) 
             document.getElementById('email_id').value="";

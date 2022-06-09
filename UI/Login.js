@@ -18,12 +18,16 @@ $(document).ready(function() {
                 {
                     msg=Record.responseText;
                     alert(msg);
-                    window.location.href="Register.html";
+                    window.location.href="ResetPassword.html";
                 },
                 error:function(err)
                 {
                     msg=err.responseText;
                     alert(msg);
+                    if(msg == "Login Successful"){
+                        window.location.href="ResetPassword.html";
+                        }
+                     
                 }
             })   
             document.getElementById("email_id").value="";

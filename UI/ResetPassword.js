@@ -37,10 +37,15 @@ $(document).ready(function() {
                 {
                     msg=Record.responseText;
                     alert(msg);
+                    window.location.href="Login.html";
                 },
                 error:function(err)
                 {
+                    
                     msg=err.responseText;
+                    if(msg == "Password Reset Successful"){
+                        window.location.href="Login.html";
+                        }
                     alert(msg);
                 }
             })   
