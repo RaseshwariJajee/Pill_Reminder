@@ -3,9 +3,16 @@ $(document).ready(function() {
         var valid=1; 
                 if ($("#newpassword1").val() != $("#newpassword2").val()) {
                     alert("Passwords do not match.");
-                    valid=0;
-
-                    
+                    document.getElementById('Oldpassword').value="";
+                    document.getElementById('newpassword1').value="";
+                    document.getElementById('newpassword2').value="";
+                    valid=0; 
+                }else if ($("#Oldpassword").val() == $("#newpassword1").val()) {
+                    alert("Old password can not be same.");
+                    document.getElementById('Oldpassword').value="";
+                    document.getElementById('newpassword1').value="";
+                    document.getElementById('newpassword2').value="";
+                    valid=0; 
                 }
             
             if(valid==1){
@@ -14,9 +21,29 @@ $(document).ready(function() {
         
             
             var pobj={
-                "password":$('#newpassword2').val(), 
+                "email" : "xyz@gmail.com",
+                "password":$('#Oldpassword').val(),
+                "newpassword":$('#newpassword2').val()
+                
             };
-            console.log(document.getElementById('resetpassword').value);
+            $.ajax({
+                url:'http://localhost:8080/reset_password',
+                dataType:'json',
+                data:JSON.stringify(pobj),
+                type:'post',
+                contentType:'application/json',
+                success:function(Record)
+                {
+                    msg=Record.responseText;
+                    alert(msg);
+                },
+                error:function(err)
+                {
+                    msg=err.responseText;
+                    alert(msg);
+                }
+            })   
+            console.log(document.getElementById('Oldpassword').value+document.getElementById('newpassword2').value);
             document.getElementById('Oldpassword').value="";
             document.getElementById('newpassword1').value="";
             document.getElementById('newpassword2').value="";

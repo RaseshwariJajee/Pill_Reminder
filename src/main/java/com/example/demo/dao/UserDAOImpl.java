@@ -101,7 +101,7 @@ public class UserDAOImpl implements UserDAO{
 		            	if(rs.getString("password").equals(u.getPassword()))
 		            	{
 		            		String updatepassword ="update users set password='"+u.getNewPassword()+"' where email_id='"+u.getEmail()+"'";
-		        		
+		            		
 		        			int rs1 = st.executeUpdate(updatepassword);
 		        			
 		            	s=true;

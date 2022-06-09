@@ -17,15 +17,17 @@ $(document).ready(function() {
                 success:function(Record)
                 {
                     msg=Record.responseText;
-                    
-                    $('#div5').text(msg);
+                    alert(msg);
+                    window.location.href="Register.html";
                 },
                 error:function(err)
                 {
                     msg=err.responseText;
-                    $('#div5').text(msg);
+                    alert(msg);
                 }
             })   
+            document.getElementById("email_id").value="";
+            document.getElementById("password").value="";
             
 });
 });
