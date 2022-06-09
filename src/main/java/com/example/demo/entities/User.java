@@ -12,6 +12,15 @@ public class User {
 	private String relationship;
 	private String blood_group;
 	private String dob;
+	private String newPassword;
+	public String getNewPassword() {
+		return newPassword;
+	}
+
+	public void setNewPassword(String newPassword) {
+		this.newPassword = newPassword;
+	}
+
 	private int weight;
 	public User(int id, String email, String imageUrl, String country, String name, long contact, String blood_group,
 			String dob, int weight, int height) {
@@ -30,6 +39,12 @@ public class User {
 	
 	public int getId() {
 		return id;
+	}
+	public User(String email,String password, String newPassword) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.newPassword = newPassword;
 	}
 	
 	public User(String email, String password) {

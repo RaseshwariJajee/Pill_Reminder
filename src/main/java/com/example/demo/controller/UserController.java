@@ -17,7 +17,7 @@ public class UserController {
 	
 	@CrossOrigin
     @PostMapping("/login")
-    public String Check(@RequestBody User u){	
+    public String check(@RequestBody User u){	
 		
 		
 		
@@ -26,8 +26,13 @@ public class UserController {
 		}    
 	@CrossOrigin
     @PostMapping("/register")
-	public String Register(@RequestBody User u) {
-		return impl.RegisterDetails(u);
+	public String register(@RequestBody User u) {
+		return impl.registerDetails(u);
+	}
+	@CrossOrigin
+    @PostMapping("/reset_password")
+	public String resetPassword(@RequestBody User u) {
+		return impl.reset(u);
 	}
 	
     

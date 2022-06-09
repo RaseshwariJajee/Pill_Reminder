@@ -37,7 +37,7 @@ public class UserDAOImpl implements UserDAO{
 		
 	}
 	@Override
-	public Boolean AddUser(User u) {
+	public Boolean addUser(User u) {
 		
 		Boolean s = false;
 		try {
@@ -48,7 +48,7 @@ public class UserDAOImpl implements UserDAO{
 			int weightuser = 0;
 			int heightuser = 0;
 			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.getEmail()+ "','"+u.getPassword() +"','"+ img +"','"+u.getCountry()+"','"+u.getName()+"',"+u.getContact()+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.getDob()+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
-			System.out.println(useradd);
+			//System.out.println(useradd);
 			int rs = st.executeUpdate(useradd);
 			
             s=true;
@@ -63,7 +63,7 @@ public class UserDAOImpl implements UserDAO{
 	} 
 	
 	@Override
-	public Boolean LoginVerify(User u) {
+	public Boolean loginVerify(User u) {
 		
 		
 		
@@ -77,6 +77,33 @@ public class UserDAOImpl implements UserDAO{
 		            	
 		            	if(rs.getString("email_id").equals(u.getEmail())&&rs.getString("password").equals(u.getPassword()))
 		            	{
+		            	s=true;
+		            	}
+		            	
+		            }
+		     }catch(Exception ex) {
+		            
+		     }
+
+				return s;
+	}
+	@Override
+	public Boolean resetPassword(User u) {
+		
+		Boolean s=false;
+		try {
+			
+		            
+		            ResultSet rs=st.executeQuery("select password from Users where email_id='"+u.getEmail()+"'");
+		            while(rs.next()) {
+		            	
+		            	
+		            	if(rs.getString("password").equals(u.getPassword()))
+		            	{
+		            		String updatepassword ="update users set password='"+u.getNewPassword()+"' where email_id='"+u.getEmail()+"'";
+		        		
+		        			int rs1 = st.executeUpdate(updatepassword);
+		        			
 		            	s=true;
 		            	}
 		            	

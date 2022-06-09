@@ -7,14 +7,14 @@ import com.example.demo.entities.User;
 public class UserServiceImpl implements UserServices{
 	
 	@Override
-	public String RegisterDetails(User u) {
+	public String registerDetails(User u) {
 		
 		Boolean s;
 		UserDAOImpl c = new UserDAOImpl();
 		if(!c.connect()) {
 			System.out.println("Error in establishing Connection");
 		}
-		s = c.AddUser(u);
+		s = c.addUser(u);
 		if(s == true) {
 			return "Registered Successfully";
 		}else {
@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserServices{
             System.out.println("Error in establishing Connection");
             
      }
-         s=c.LoginVerify(u);
+         s=c.loginVerify(u);
          
          if(s==true) {
       	   return "Login Successful";
@@ -41,6 +41,29 @@ public class UserServiceImpl implements UserServices{
          else {
       	   return "Invalid Credentials";
          }
+	}
+
+	@Override
+	public String reset(User u) {
+Boolean s;
+		
+        
+        UserDAOImpl c=new UserDAOImpl();
+       
+        if(!c.connect()) {
+            System.out.println("Error in establishing Connection");
+            
+     }
+         s=c.resetPassword(u);
+         
+         if(s==true) {
+      	   return "Password Reset Successful";
+         }
+         else {
+      	   return "Wrong Password";
+         }
+		
+		
 	}
 
 }
