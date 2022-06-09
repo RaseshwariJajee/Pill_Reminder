@@ -64,4 +64,30 @@ public class UserDAOImpl implements UserDAO{
 				return s;
 	}
 
+
+	@Override
+	public Boolean AddUser(User u) {
+		System.out.println("ADDUser");
+		Boolean s = false;
+		try {
+			String img = "";
+			String isDependent = "NO";
+			String relation = "SELF";
+			String bg = "NULL";
+			int weightuser = 0;
+			int heightuser = 0;
+			//String useradd = ("insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height)"+" values()");
+			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.email+ "','"+u.password +"','"+ img +"','"+u.country+"','"+u.name+"',"+u.contact+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.dob+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
+			System.out.println(useradd);
+			int rs = st.executeUpdate(useradd);
+			System.out.println(rs);
+            s=true;
+            }catch(Exception ex) {
+            	System.out.println(ex);
+                   
+            }
+		
+		return s;
+	}
+
 }

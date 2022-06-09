@@ -24,5 +24,10 @@ public class UserController {
 			
 		}    
     
-
+	@CrossOrigin
+    @PostMapping("/register")
+	public String Register(@RequestBody User u) {
+		return impl.RegisterDetails(u);
+	}
+	
 }

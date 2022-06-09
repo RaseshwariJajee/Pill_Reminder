@@ -26,4 +26,21 @@ public class UserServiceImpl implements UserServices{
          }
 	}
 
+	@Override
+	public String RegisterDetails(User u) {
+		System.out.println("RegisterDetails");
+		Boolean s;
+		UserDAOImpl c = new UserDAOImpl();
+		if(!c.connect()) {
+			System.out.println("Error in establishing Connection");
+		}
+		s = c.AddUser(u);
+		if(s == true) {
+			return "Registered Successfully";
+		}else {
+			return "Failed to Register";
+		}
+	}
+
+	
 }

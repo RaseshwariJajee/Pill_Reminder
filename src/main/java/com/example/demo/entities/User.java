@@ -1,19 +1,22 @@
 package com.example.demo.entities;
 
+
 public class User {
 	public int id;
 	public String email;
 	public String password;
-	private String imageUrl;
-	private String country;
-	private String name ;
-	private int contact;
-	private String isDependent;
-	private String relationship;
-	private String blood_group;
-	private String dob;
-	private int weight;
-	public User(int id, String email, String imageUrl, String country, String name, int contact, String blood_group,
+	public String imageUrl;
+	public String country;
+	public String name ;
+	public long contact;
+	public String isDependent;
+	public String relationship;
+	public String blood_group;
+	public String dob;
+	public int weight;
+	public int height;
+	
+	public User(int id, String email, String imageUrl, String country, String name, long contact, String blood_group,
 			String dob, int weight, int height) {
 		super();
 		this.id = id;
@@ -73,10 +76,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getContact() {
+	public long getContact() {
 		return contact;
 	}
-	public void setContact(int contact) {
+	public void setContact(long contact) {
 		this.contact = contact;
 	}
 	public String getIsDependent() {
@@ -116,8 +119,8 @@ public class User {
 		this.height = height;
 	}
 
-	private int height;
-	public User(String email, String password, String country, String name, int contact, String dob) {
+
+	public User(String email, String password, String country, String name, long contact, String dob) {
 		super();
 		this.email = email;
 		this.password = password;
