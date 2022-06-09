@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 
-
 import com.example.demo.entities.User;
 
 
 
 
 public class UserDAOImpl implements UserDAO{
+	 
 	
 	private Connection con;
 	static Statement st;
@@ -41,13 +41,15 @@ public class UserDAOImpl implements UserDAO{
 		
 		Boolean s = false;
 		try {
+			EncryptionDecryption td =new EncryptionDecryption();
 			String img = "";
 			String isDependent = "NO";
 			String relation = "SELF";
 			String bg = "NULL";
 			int weightuser = 0;
 			int heightuser = 0;
-			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.getEmail()+ "','"+u.getPassword() +"','"+ img +"','"+u.getCountry()+"','"+u.getName()+"',"+u.getContact()+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.getDob()+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
+			String encrypted=td.encrypt(u.getPassword());
+			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.getEmail()+ "','"+encrypted +"','"+ img +"','"+u.getCountry()+"','"+u.getName()+"',"+u.getContact()+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.getDob()+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
 			//System.out.println(useradd);
 			int rs = st.executeUpdate(useradd);
 			
@@ -69,13 +71,17 @@ public class UserDAOImpl implements UserDAO{
 		
 		Boolean s=false;
 		try {
+			EncryptionDecryption td =new EncryptionDecryption();
 			
 		            
 		            ResultSet rs=st.executeQuery("select email_id,password from Users where email_id='"+u.getEmail()+"'");
 		            while(rs.next()) {
 		            	
+		            	String decrypted=td.decrypt(rs.getString("password"));
 		            	
-		            	if(rs.getString("email_id").equals(u.getEmail())&&rs.getString("password").equals(u.getPassword()))
+		            	
+		            	
+		            	if(rs.getString("email_id").equals(u.getEmail())&&decrypted.equals(u.getPassword()))
 		            	{
 		            	s=true;
 		            	}
@@ -91,17 +97,23 @@ public class UserDAOImpl implements UserDAO{
 	public Boolean resetPassword(User u) {
 		
 		Boolean s=false;
-		try {
+		try {EncryptionDecryption td =new EncryptionDecryption();
 			
 		            
 		            ResultSet rs=st.executeQuery("select password from Users where email_id='"+u.getEmail()+"'");
+		            
+		            
 		            while(rs.next()) {
+		            	System.out.println(rs.getString("password"));
+		            	String decrypted=td.decrypt(rs.getString("password"));
 		            	
-		            	
-		            	if(rs.getString("password").equals(u.getPassword()))
-		            	{
-		            		String updatepassword ="update users set password='"+u.getNewPassword()+"' where email_id='"+u.getEmail()+"'";
+		            	//System.out.println(decrypted);
+		            	if(decrypted.equals(u.getPassword()))
 		            		
+		            	{
+		            		String encrypted=td.encrypt(u.getNewPassword());
+		            		String updatepassword ="update users set password='"+encrypted+"' where email_id='"+u.getEmail()+"'";
+		        		
 		        			int rs1 = st.executeUpdate(updatepassword);
 		        			
 		            	s=true;
