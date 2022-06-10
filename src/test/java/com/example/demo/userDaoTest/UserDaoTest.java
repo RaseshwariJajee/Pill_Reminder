@@ -33,21 +33,7 @@ public class UserDaoTest {
 	@Test
 	void testVerify(){
 		 
-		User u=new User("ak1@gmail.com","ak5");
-		//expected
-		Boolean val1=true;
-		
-		//actual
-		Boolean val2=dao.loginVerify(u); 
-		
-		assertThat(val1).isEqualTo(val2);  
-		
-		
-	}*/
-	@Test
-	void testResetPassword(){
-		 
-		User u=new User("ak1@gmail.com","ak5","a**");
+		User u=new User("ak@gmail.com","ak");
 		//expected
 		Boolean val1=true;
 		
@@ -58,13 +44,30 @@ public class UserDaoTest {
 		
 		
 	}
+	*/
+	/*
+	@Test
+	void testResetPassword(){
+		 
+		User u=new User("ak@gmail.com","ak","a*");
+		//expected
+		Boolean val1=true;
+		
+		//actual
+		Boolean val2=dao.loginVerify(u); 
+		
+		assertThat(val1).isEqualTo(val2);  
+		
+		
+	}
+	*/
 	
 	/*
 	@Test
 	void checkAddUser(){
 		UserDAOImpl userimpl = new UserDAOImpl();
 		userimpl.connect();
-		User u = new User("ak1@gmail.com","ak5","India","Akanksha",1234567890,"1999-03-20");
+		User u = new User("ak@gmail.com","ak","India","Akanksha",1234567890,"1999-03-20");
 		assertEquals(true,userimpl.addUser(u));
 	}
 	*/

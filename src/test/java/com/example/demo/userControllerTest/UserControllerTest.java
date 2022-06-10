@@ -1,4 +1,4 @@
-package com.example.demo.userServiceTest;
+package com.example.demo.userControllerTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -9,16 +9,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 import org.mockito.junit.jupiter.MockitoExtension;
 
-
+import com.example.demo.controller.UserController;
 import com.example.demo.dao.UserDAOImpl;
 import com.example.demo.entities.User;
 import com.example.demo.services.UserServiceImpl;
 
-@ExtendWith(MockitoExtension.class)
-public class UserServiceTest {
+public class UserControllerTest {
 	
 	private UserDAOImpl dao=new UserDAOImpl();
-	private  UserServiceImpl ser=new UserServiceImpl();
+	private  UserController controller=new UserController();
 	
 	@BeforeEach
 	void setUp() {
@@ -27,35 +26,28 @@ public class UserServiceTest {
             
      }
 	}
-	/*
+	
+	
+	
 	@Test
-	void checkuser() {
-		UserServiceImpl serviceimp = new UserServiceImpl();
-		String res = "Registered Successfully";
-		User u = new User("abcc@gmail.com","eee","India","abcc",1274567890,"1999-07-20");
-		assertEquals(res,serviceimp.registerDetails(u));
-	}
-	*/
-	/*
-	@Test
-	void testReset() {
-		User u=new User("abcc@gmail.com","eee","ee9");
+	void testResetPassword() {
+		User u=new User("sam@gmail.com","Sam","Mas");
 		
 		String s1="Password Reset Successful";
-		String s2=ser.reset(u);
+		String s2=controller.resetPassword(u);
 		assertThat(s1).isEqualTo(s2);
 		
-	}
-	*/
-	/*
+	}/*
+	
 	@Test
-	void testLoginCredentials() {
-		User u=new User("abcc@gmail.com","ee9");
+	void testCheck() {
+		User u=new User("sam@gmail.com","Sam");
 		
 		String s1="Login Successful";
-		String s2=ser.loginCredentials(u);
+		String s2=controller.check(u);
 		assertThat(s1).isEqualTo(s2);
-	}*/
 	
 	
+	
+}*/
 }

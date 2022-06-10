@@ -103,7 +103,7 @@ public class UserDAOImpl implements UserDAO{
 		            ResultSet rs=st.executeQuery("select password from Users where email_id='"+u.getEmail()+"'");
 		           
 		            while(rs.next()) {
-		            	System.out.println(rs.getString("password"));
+		            	
 		            	String decrypted=td.decrypt(rs.getString("password"));
 		            	
 		            	//System.out.println(decrypted);
