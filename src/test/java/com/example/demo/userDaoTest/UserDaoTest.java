@@ -29,7 +29,7 @@ public class UserDaoTest {
 		assertEquals(true,userimpl.connect());
 	}
 	
-	/*
+	
 	@Test
 	void testVerify(){
 		 
@@ -44,8 +44,8 @@ public class UserDaoTest {
 		
 		
 	}
-	*/
-	/*
+	
+	
 	@Test
 	void testResetPassword(){
 		 
@@ -60,9 +60,7 @@ public class UserDaoTest {
 		
 		
 	}
-	*/
 	
-	/*
 	@Test
 	void checkAddUser(){
 		UserDAOImpl userimpl = new UserDAOImpl();
@@ -70,7 +68,7 @@ public class UserDaoTest {
 		User u = new User("ak@gmail.com","ak","India","Akanksha",1234567890,"1999-03-20");
 		assertEquals(true,userimpl.addUser(u));
 	}
-	*/
+	
 	
 
 }
