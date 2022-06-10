@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserServices{
 
 	@Override
 	public String reset(User u) {
-Boolean s;
+		Boolean s;
 		
         
         UserDAOImpl c=new UserDAOImpl();

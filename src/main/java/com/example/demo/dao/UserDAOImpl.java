@@ -50,7 +50,7 @@ public class UserDAOImpl implements UserDAO{
 			int heightuser = 0;
 			String encrypted=td.encrypt(u.getPassword());
 			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.getEmail()+ "','"+encrypted +"','"+ img +"','"+u.getCountry()+"','"+u.getName()+"',"+u.getContact()+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.getDob()+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
-			//System.out.println(useradd);
+			System.out.println(useradd);
 			int rs = st.executeUpdate(useradd);
 			
             s=true;
@@ -101,8 +101,7 @@ public class UserDAOImpl implements UserDAO{
 			
 		            
 		            ResultSet rs=st.executeQuery("select password from Users where email_id='"+u.getEmail()+"'");
-		            
-		            
+		           
 		            while(rs.next()) {
 		            	System.out.println(rs.getString("password"));
 		            	String decrypted=td.decrypt(rs.getString("password"));

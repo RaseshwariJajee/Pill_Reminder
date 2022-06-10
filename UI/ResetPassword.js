@@ -18,7 +18,8 @@ $(document).ready(function() {
             if(valid==1){
                 
             var msg="";
-        
+            let newObject = window.localStorage.getItem("myemailObject");
+            console.log(JSON.parse(newObject));
             
             var pobj={
                 "email" : "vishal@gmail.com",

@@ -50,7 +50,7 @@ $(document).ready(function() {
                         }
                 }
             }) 
-            document.getElementById('email_id').value="";
+                document.getElementById('email_id').value="";
             document.getElementById('password1').value=""; 
             document.getElementById('contact').value="";
             document.getElementById('country').value="";

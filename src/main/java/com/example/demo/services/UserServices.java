@@ -6,4 +6,5 @@ public interface UserServices {
 	public String loginCredentials(User u);
 	public String registerDetails(User u);
 	public String reset(User u);
+	//public MedicineSchedule ScheduleDisplay(MedicineSchedule u);
 }
