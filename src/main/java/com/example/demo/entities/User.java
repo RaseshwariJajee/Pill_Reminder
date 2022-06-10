@@ -22,10 +22,10 @@ public class User {
 	}
 
 	private int weight;
-	public User(int id, String email, String imageUrl, String country, String name, long contact, String blood_group,
+	public User( String email, String imageUrl, String country, String name, long contact, String blood_group,
 			String dob, int weight, int height) {
 		super();
-		this.id = id;
+		
 		this.email = email;
 		this.imageUrl = imageUrl;
 		this.country = country;
@@ -37,9 +37,7 @@ public class User {
 		this.height = height;
 	}
 	
-	public int getId() {
-		return id;
-	}
+	
 	public User(String email,String password, String newPassword) {
 		super();
 		this.email = email;
