@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="Medical_Schedule.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bx-menu sidebarBtn'></i>
+      <span class="logo_name">Dashboard</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="Home.html" class="active">
+            <i class='bx bx-home' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="Medical_Schedule.html">
+            <i class='bx bx-food-menu' ></i>
+            <span class="links_name">Medical Schedules</span>
+          </a>
+        </li>
+        <li>
+          <a href="ResetPassword.html">
+            <i class='bx bx-key' ></i>
+            <span class="links_name">Reset Password</span>
+          </a>
+        </li>
+        <li>
+            <a href="Login.html">
+              <i class='bx bx-log-out' ></i>
+              <span class="links_name">Logout</span>
+            </a>
+          </li>
+          <li>
+        
+
+      </ul>
+  </div>
+  <section class="home-section">
+      <nav>
+  
+        <img class="profile-details" src="propic.jfif" alt="">
+        <span class="Welcome">Add Medical Schedule</span>        
+      </nav>
+      
+      <div class="home-content">
+        <div class="overview-boxes">
+            <div class="box">  
+                <div>           
+      <select class="mySelect"> 
+        <option value="" disabled selected hidden>Choose to View Medical History</option>
+        <option value="self">SELF</option> 
+        <option value="mother">Mother</option> 
+        <option value="father">Father</option> 
+        <option value="spouse">Spouse</option> 
+        <option value="father-in-law">Father-in-law</option>
+        <option value="mother-in-law">Mother-in-law</option>
+        <option value="son">Son</option>
+        <option value="daughter">Daughter</option>
+    </select>   
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+       
+        <button class="input1" id="b" type="button" >Add Medicine Schedule</button>
+      </div>
+     
+<br>
+<div class="table1">
+
+
+<table >
+  <tr>
+    <th>Illness</th>
+    <th>Doctor Details</th>
+    <th>Medicines</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Dosage Amount</th>
+    <th>Dosage Frequency</th>
+    <th>Dosage Time</th>
+    <th>Email Notification</th>
+    <th>Remove</th>
+  </tr>
+  <tr>
+    <td>Common Flu</td>
+    <td>Maria Anders</td>
+    <td>Paracetamol</td>
+    <td>Alfreds Futterkiste</td>
+    <td>25 Aug 2020</td>
+    <td>27 Aug 2020</td>
+    <td>1 Tablet</td>
+    <td>2 times</td>
+    <td>2 pm</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    
+  </tr>
+  <tr>
+    <td>Common Flu</td>
+    <td>Maria Anders</td>
+    <td>Paracetamol</td>
+    <td>Alfreds Futterkiste</td>
+    <td>25 Aug 2020</td>
+    <td>27 Aug 2020</td>
+    <td>1 Tablet</td>
+    <td>2 times</td>
+    <td>2 pm</td>
+    <td>Yes</td>
+    <td>Yes</td>
+  </tr>
+</table>
+
+
+
+</div>
+<br>
+<br>
+<br>
+
+
+
+      <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       
+        <button class="input1" id="1b" type="button" >Save</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+      
+       
+        <button class="input1" id="b1" type="button" >Cancel</button>
+      </div>
+
+
+      </div>
+      
+      </div>
+      </div>
+      
+      
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>
+

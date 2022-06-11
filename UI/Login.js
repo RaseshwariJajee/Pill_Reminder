@@ -18,25 +18,18 @@ $(document).ready(function() {
                 {
                     msg=Record.responseText;
                     alert(msg);
-                    var testObject = document.getElementById("email_id");
-                    localStorage.setItem('testObject',testObject);
-
-                    window.location.href="ResetPassword.html";
+                    window.location.href="Home.html";
                 },
                 error:function(err)
                 {
                     msg=err.responseText;
                     alert(msg);
                     if(msg == "Login Successful"){
-                        var testObject = document.getElementById("email_id");
-                        localStorage.setItem('testObject', testObject);
-
-                        window.location.href="ResetPassword.html";
+                        window.location.href="Home.html";
                         }
                      
                 }
             })   
-            
             document.getElementById("email_id").value="";
             document.getElementById("password").value="";
             
