@@ -18,6 +18,7 @@ $(document).ready(function() {
                 {
                     msg=Record.responseText;
                     alert(msg);
+                    sessionStorage.setItem("usersData", JSON.stringify(pobj.email));
                     window.location.href="Home.html";
                 },
                 error:function(err)
@@ -25,6 +26,7 @@ $(document).ready(function() {
                     msg=err.responseText;
                     alert(msg);
                     if(msg == "Login Successful"){
+                        sessionStorage.setItem("usersData", JSON.stringify(pobj.email));
                         window.location.href="Home.html";
                         }
                      

@@ -19,7 +19,11 @@ $(document).ready(function() {
                 
             var msg="";
         
-            
+            var usersDataString = sessionStorage.getItem("usersData");
+            console.log(usersDataString);
+            var usersData = JSON.parse(usersDataString);
+            console.log(usersData);
+            document.write(usersData);
             var pobj={
                 "email" : "vishal@gmail.com",
                 "password":$('#Oldpassword').val(),

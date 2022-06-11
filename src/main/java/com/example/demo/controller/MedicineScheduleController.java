@@ -24,4 +24,11 @@ public class MedicineScheduleController {
 			return mdImpl.DisplaySchedule();
 			
 		}
+	
+	@CrossOrigin
+    @PostMapping("/medicalhistory")
+	public List<MedicineSchedule> displayMedicalHistory(@RequestBody String useremailid){
+		mdImpl.connect();
+		return mdImpl.displayMedicalHistory(useremailid);
+	}
 }
