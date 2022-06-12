@@ -94,7 +94,7 @@ public class MedicineScheduleImpl implements MedicineScheduleDAO{
 	public int checkid(String useremailid) throws SQLException {
 		int id2=0;
 		st=con.createStatement();
-		String sql = "select id from Users where email_id="+useremailid;
+		String sql = "select id from users where email_id="+useremailid;
 		System.out.println(sql);
 		//System.out.println(rs);
 		ResultSet rs = st.executeQuery(sql);

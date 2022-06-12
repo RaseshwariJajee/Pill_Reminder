@@ -23,7 +23,7 @@ $(document).ready(function() {
             console.log(usersDataString);
             var usersData = JSON.parse(usersDataString);
             console.log(usersData);
-            document.write(usersData);
+            document.write(user);
             var pobj={
                 "email" : "vishal@gmail.com",
                 "password":$('#Oldpassword').val(),

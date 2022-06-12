@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+    <link rel="stylesheet" href="MyProfile.css">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="jquery-3.6.0.min.js"></script>
+     <script src="jquery-3.6.0.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
+     <script src="Medical_Schedule.js"></script>
+   </head>
+   
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <i class='bx bx-menu sidebarBtn'></i>
+      <span class="logo_name">Dashboard</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="Home.html" class="active">
+            <i class='bx bx-home' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">My Profile</span>
+          </a>
+        </li>
+        <li>
+          <a href="Medical_Schedule.html">
+            <i class='bx bx-food-menu' ></i>
+            <span class="links_name">Medical Schedules</span>
+          </a>
+        </li>
+        <li>
+          <a href="ResetPassword.html">
+            <i class='bx bx-key' ></i>
+            <span class="links_name">Reset Password</span>
+          </a>
+        </li>
+        <li>
+            <a href="Login.html">
+              <i class='bx bx-log-out' ></i>
+              <span class="links_name">Logout</span>
+            </a>
+          </li>
+          <li>
+        
+
+      </ul>
+  </div>
+  <section class="home-section">
+      <nav>
+  
+        <img class="profile-details" src="propic.jfif" alt="">
+        <span class="Welcome">My Profile</span>        
+      </nav>
+  </section>
+  <section>
+   <div>
+    <div class="container">
+        <div class="cover-photo">
+          <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
+        </div>
+        <div style="text-align: left; margin-top: 10px; margin-left: 30px;">
+          <label>Name</label><br><br>
+          <label>Email Address</label><br><br>
+          <label>Contact Number</label><br><br>
+          <label>Blood Group</label><br><br>
+          <label>Date of Birth</label><br><br>
+          <label>Weight</label><br><br>
+          <label>Height</label>
+        </div>
+      </div>
+    </div>
+      <br><br>
+      <div style="margin-left: 400px; margin-top: -530px;">
+      <div class="container">
+        <div class="cover-photo">
+          <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
+        </div>
+        <div style="text-align: left; margin-top: 10px; margin-left: 30px;">
+           <label>Relation</label><br><br>
+          <label>Name</label><br><br>
+          <label>Email Address</label><br><br>
+          <label>Contact Number</label><br><br>
+          <label>Blood Group</label><br><br>
+          <label>Date of Birth</label><br><br>
+          <label>Weight</label><br><br>
+          <label>Height</label>
+        </div>
+      </div>
+    </div>
+    <br><br>
+    <div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+        <button class="input1" id="1b" type="button" >Save</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+      
+       
+        <button class="input1" id="b1" type="button" >Cancel</button>
+      </div>
+    <div class="dep" style="margin-left: 1100px; margin-top: -450px;">
+      <select class="mySelect"> 
+        <option value="" disabled selected hidden>View Dependent</option>
+        <option value="self">SELF</option> 
+        <option value="mother">Mother</option> 
+        <option value="father">Father</option> 
+        <option value="spouse">Spouse</option> 
+        <option value="father-in-law">Father-in-law</option>
+        <option value="mother-in-law">Mother-in-law</option>
+        <option value="son">Son</option>
+        <option value="daughter">Daughter</option>
+    </select>
+    <br><br><br>
+    <button style="width: 150px; height: 50px; color: gray;" type="button" >Add Dependent</button>
+    
+</div>
+
+</section>
+ 
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>
+
