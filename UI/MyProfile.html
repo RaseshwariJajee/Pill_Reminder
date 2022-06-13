@@ -11,10 +11,10 @@
      <script src="jquery-3.6.0.min.js"></script>
      <script src="jquery-3.6.0.js"></script>
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" ></script>
-     <script src="Medical_Schedule.js"></script>
+     <script src="MyProfile.js"></script>
    </head>
    
-<body>
+<body >
   <div class="sidebar">
     <div class="logo-details">
         <i class='bx bx-menu sidebarBtn'></i>
@@ -28,7 +28,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="MyProfile.html">
             <i class='bx bx-user' ></i>
             <span class="links_name">My Profile</span>
           </a>
@@ -70,13 +70,28 @@
           <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
         </div>
         <div style="text-align: left; margin-top: 10px; margin-left: 30px;">
-          <label>Name</label><br><br>
-          <label>Email Address</label><br><br>
-          <label>Contact Number</label><br><br>
-          <label>Blood Group</label><br><br>
-          <label>Date of Birth</label><br><br>
-          <label>Weight</label><br><br>
-          <label>Height</label>
+          <div id="div2 "></div>
+          <label>Name</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="name" placeholder="Enter Your Name" required>
+          <div class="underline"></div><br>
+          <label>Email Address</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="email" placeholder="Enter Your Email" required>
+          <div class="underline"></div><br>
+          <label>Contact Number</label>
+          <input type="text" id="Number" placeholder="Enter Your Contact" required>
+          <div class="underline"></div><br>
+          <label>Blood Group</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="name" placeholder="Enter Blood Group" required>
+          <div class="underline"></div><br>
+          <label>Date of Birth</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="name" placeholder="Enter Date of Birth" required>
+          <div class="underline"></div><br>
+          <label>Weight</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="name" placeholder="Enter Weight" required>
+          <div class="underline"></div><br>
+          <label>Height</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="name" placeholder="Enter Height" required>
+          <div class="underline"></div><br>
         </div>
       </div>
     </div>
@@ -133,6 +148,7 @@
 </div>
 
 </section>
+
  
   <script>
    let sidebar = document.querySelector(".sidebar");

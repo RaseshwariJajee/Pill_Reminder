@@ -1,9 +1,16 @@
 package com.example.demo.controller;
 
+
+import java.util.List;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 
 import com.example.demo.entities.User;
 import com.example.demo.services.UserServiceImpl;
@@ -34,6 +41,19 @@ public class UserController {
 	public String resetPassword(@RequestBody User u) {
 		return impl.reset(u);
 	}
+	@CrossOrigin
+    @GetMapping("/profile/{email}")
+	public List<User> ViewDetails(@PathVariable String email) {
+		System.out.println(email);
+		        
+        return impl.Details(email);
+  }
+	@PutMapping("/profile")
+	public String EditDetails(@RequestBody User u) {
+		        
+        return impl.Edit(u);
+  }
+	
 	
     
 

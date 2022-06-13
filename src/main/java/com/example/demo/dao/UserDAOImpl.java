@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
-
+import com.example.demo.entities.MedicineSchedule;
 import com.example.demo.entities.User;
 
 
@@ -50,7 +52,6 @@ public class UserDAOImpl implements UserDAO{
 			int heightuser = 0;
 			String encrypted=td.encrypt(u.getPassword());
 			String useradd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.getEmail()+ "','"+encrypted +"','"+ img +"','"+u.getCountry()+"','"+u.getName()+"',"+u.getContact()+",'"+isDependent +"','"+relation+"','"+bg+"',to_date('"+u.getDob()+"','yyyy-mm-dd'),"+weightuser+","+heightuser+")";
-			System.out.println(useradd);
 			int rs = st.executeUpdate(useradd);
 			
             s=true;
@@ -125,5 +126,56 @@ public class UserDAOImpl implements UserDAO{
 
 				return s;
 	}
+	@Override
+	public List<User> getDetails(String email) {
+		
+		List<User> user = new ArrayList<>();
+		try {
+			
+			
+			String sql = "select id,name,email_id,imageUrl,country,isDependent,relationship,contact,blood_group,dob,weight,height from users where email_id='"+email+"'";
+			System.out.println(sql);
+			ResultSet rs = st.executeQuery(sql);
+			
+			while(rs.next()) {
+		        int id =rs.getInt("id");
+		        String name = rs.getString("name");
+		        String email1 = rs.getString("email_id");
+		        String imageUrl = rs.getString("imageUrl");
+		        String country = rs.getString("imageUrl");
+		        String isDependent = rs.getString("isDependent");
+		        String relationship = rs.getString("relationship");
+		        long contact = rs.getLong("contact");
+		        String blood_group = rs.getString("blood_group");
+		        String dob = rs.getString("dob");
+		        int weight = rs.getInt("weight");
+		        int height = rs.getInt("height");
+		        
+		        user.add(new User(id,name,email1,imageUrl,country,isDependent,relationship,contact,blood_group,dob,weight,height));
+		      }
+		}catch(Exception ex) {
+			System.out.println(ex);
+		}
+		return user;
+		
+	}
+	@Override	
+	public Boolean editUser(User u) {
+Boolean s=true;
+try {
+	              
+	
+	String update ="Update users set name='"+u.getName()+"',contact="+u.getContact()+",blood_group='"+u.getBlood_group()+"',dob=to_date('"+u.getDob()+"','dd/mm/yyyy'),weight="+u.getWeight()+",height="+u.getHeight()+" where email_id='"+u.getEmail()+"'";
+	
+          int x=st.executeUpdate(update);
+            }catch(Exception ex) {
+            	System.out.println(ex);
+            	s=false;
+                   
+            }
+            return s;
+		
+	}
+		
 
 }

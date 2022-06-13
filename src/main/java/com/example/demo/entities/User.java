@@ -13,6 +13,21 @@ public class User {
 	private String blood_group;
 	private String dob;
 	private String newPassword;
+	private int weight;
+	private int height;
+	public User( String name,String email,  long contact, String blood_group,String dob, int weight, int height) {
+		super();
+		this.name = name;
+		this.email = email;
+		this.contact = contact;
+		this.blood_group = blood_group;
+		this.dob = dob;
+		this.weight = weight;
+		this.height = height;
+	}
+	public int getId() {
+		return id;
+	}
 	public String getNewPassword() {
 		return newPassword;
 	}
@@ -21,7 +36,7 @@ public class User {
 		this.newPassword = newPassword;
 	}
 
-	private int weight;
+	
 	public User( String email, String imageUrl, String country, String name, long contact, String blood_group,
 			String dob, int weight, int height) {
 		super();
@@ -38,6 +53,7 @@ public class User {
 	}
 	
 	
+	
 	public User(String email,String password, String newPassword) {
 		super();
 		this.email = email;
@@ -51,10 +67,7 @@ public class User {
 		this.password = password;
 	}
 
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
 	public String getEmail() {
 		return email;
@@ -129,7 +142,7 @@ public class User {
 		this.height = height;
 	}
 
-	private int height;
+	
 	public User(String email, String password, String country, String name, long contact, String dob) {
 		super();
 		this.email = email;
@@ -138,6 +151,24 @@ public class User {
 		this.name = name;
 		this.contact = contact;
 		this.dob = dob;
+	}
+	public User(int id, String name, String email, String imageUrl, String country, String isDependent,String relationship, long contact, String blood_group, String dob, int weight, int height) {
+		this.id=id;
+		this.email = email;
+		this.imageUrl = imageUrl;
+		this.country = country;
+		this.name = name;
+		this.isDependent=isDependent;
+		this.relationship=relationship;
+		this.contact = contact;
+		this.blood_group = blood_group;
+		this.dob = dob;
+		this.weight = weight;
+		this.height = height;	
+	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 	
 	
