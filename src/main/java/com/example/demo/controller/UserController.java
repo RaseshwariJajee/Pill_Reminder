@@ -44,10 +44,12 @@ public class UserController {
 	@CrossOrigin
     @GetMapping("/profile/{email}")
 	public List<User> ViewDetails(@PathVariable String email) {
-		System.out.println(email);
+		
 		        
         return impl.Details(email);
   }
+	
+	@CrossOrigin
 	@PutMapping("/profile")
 	public String EditDetails(@RequestBody User u) {
 		        

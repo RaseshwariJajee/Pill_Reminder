@@ -76,7 +76,7 @@ public class UserServiceImpl implements UserService{
             
      }
 		List<User> userDetails = c.getDetails(email);
-        System.out.println(userDetails);
+        
          return userDetails;
 		
 		

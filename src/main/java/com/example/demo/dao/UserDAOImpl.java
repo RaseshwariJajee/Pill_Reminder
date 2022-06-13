@@ -134,7 +134,7 @@ public class UserDAOImpl implements UserDAO{
 			
 			
 			String sql = "select id,name,email_id,imageUrl,country,isDependent,relationship,contact,blood_group,dob,weight,height from users where email_id='"+email+"'";
-			System.out.println(sql);
+			
 			ResultSet rs = st.executeQuery(sql);
 			
 			while(rs.next()) {
@@ -165,7 +165,7 @@ Boolean s=true;
 try {
 	              
 	
-	String update ="Update users set name='"+u.getName()+"',contact="+u.getContact()+",blood_group='"+u.getBlood_group()+"',dob=to_date('"+u.getDob()+"','dd/mm/yyyy'),weight="+u.getWeight()+",height="+u.getHeight()+" where email_id='"+u.getEmail()+"'";
+	String update ="Update users set name='"+u.getName()+"',contact="+u.getContact()+",blood_group='"+u.getBlood_group()+"',dob=to_date('"+u.getDob()+"','yyyy/mm/dd'),weight="+u.getWeight()+",height="+u.getHeight()+" where email_id='"+u.getEmail()+"'";
 	
           int x=st.executeUpdate(update);
             }catch(Exception ex) {

@@ -21,11 +21,11 @@ $(document).ready(function() {
         
             var usersDataString = sessionStorage.getItem("usersData");
             console.log(usersDataString);
-            var usersData = JSON.parse(usersDataString);
-            console.log(usersData);
-            document.write(user);
-            var pobj={
-                "email" : "vishal@gmail.com",
+            var pobj = {
+                "email": usersDataString
+            }
+            var obj={
+                "email" : pobj.email.replace(/['"]+/g, ''),
                 "password":$('#Oldpassword').val(),
                 "newPassword":$('#newpassword2').val()
                 
@@ -34,7 +34,7 @@ $(document).ready(function() {
             $.ajax({
                 url:'http://localhost:8080/reset_password',
                 dataType:'json',
-                data:JSON.stringify(pobj),
+                data:JSON.stringify(obj),
                 type:'post',
                 contentType:'application/json',
                 success:function(Record)
