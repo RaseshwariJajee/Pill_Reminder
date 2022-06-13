@@ -12,4 +12,7 @@ public interface UserService {
 	
 	public String Edit(User u);
 	public List<User> Details(String email);
+	
+	public List<User> ViewDependents(User u);
+	
 }

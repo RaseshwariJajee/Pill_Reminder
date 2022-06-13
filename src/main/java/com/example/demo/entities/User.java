@@ -15,15 +15,11 @@ public class User {
 	private String newPassword;
 	private int weight;
 	private int height;
-	public User( String name,String email,  long contact, String blood_group,String dob, int weight, int height) {
+	
+	public User(int id, String relationship) {
 		super();
-		this.name = name;
-		this.email = email;
-		this.contact = contact;
-		this.blood_group = blood_group;
-		this.dob = dob;
-		this.weight = weight;
-		this.height = height;
+		this.id = id;
+		this.relationship = relationship;
 	}
 	public int getId() {
 		return id;
@@ -143,8 +139,10 @@ public class User {
 	}
 
 	
+	
 	public User(String email, String password, String country, String name, long contact, String dob) {
 		super();
+		
 		this.email = email;
 		this.password = password;
 		this.country = country;
@@ -169,6 +167,19 @@ public class User {
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public User( int id, String relationship,String name,String email,  long contact, String blood_group,String dob, int weight, int height) {
+		super();
+		
+		this.id=id;
+		this.relationship=relationship;
+		this.name = name;
+		this.email = email;
+		this.contact = contact;
+		this.blood_group = blood_group;
+		this.dob = dob;
+		this.weight = weight;
+		this.height = height;
 	}
 	
 	

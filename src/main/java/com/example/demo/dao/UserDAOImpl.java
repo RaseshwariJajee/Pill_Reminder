@@ -3,6 +3,7 @@ package com.example.demo.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -142,7 +143,7 @@ public class UserDAOImpl implements UserDAO{
 		        String name = rs.getString("name");
 		        String email1 = rs.getString("email_id");
 		        String imageUrl = rs.getString("imageUrl");
-		        String country = rs.getString("imageUrl");
+		        String country = rs.getString("country");
 		        String isDependent = rs.getString("isDependent");
 		        String relationship = rs.getString("relationship");
 		        long contact = rs.getLong("contact");
@@ -161,21 +162,122 @@ public class UserDAOImpl implements UserDAO{
 	}
 	@Override	
 	public Boolean editUser(User u) {
-Boolean s=true;
-try {
-	              
-	
-	String update ="Update users set name='"+u.getName()+"',contact="+u.getContact()+",blood_group='"+u.getBlood_group()+"',dob=to_date('"+u.getDob()+"','yyyy/mm/dd'),weight="+u.getWeight()+",height="+u.getHeight()+" where email_id='"+u.getEmail()+"'";
+Boolean s=false;
+
+	if(u.getRelationship().equalsIgnoreCase("SELF"))
+	{
+		try {
+		u.setIsDependent("NO");	
+	String update ="Update users set relationship='"+u.getRelationship()+"',isDependent='"+u.getIsDependent()+"',name='"+u.getName()+"',contact="+u.getContact()+",blood_group='"+u.getBlood_group()+"',dob=to_date('"+u.getDob()+"','yyyy/mm/dd'),weight="+u.getWeight()+",height="+u.getHeight()+" where email_id='"+u.getEmail()+"'";
 	
           int x=st.executeUpdate(update);
-            }catch(Exception ex) {
+          s=true;
+            }
+	catch(Exception ex) {
             	System.out.println(ex);
-            	s=false;
+            	
                    
             }
             return s;
+}
+	
+else
+{
+	try {
+		u.setIsDependent("YES");
+		String password = "NULL";
+		String country = "NULL";
+		String img = "";
+		String dependentadd ="insert into users(email_id,password,imageUrl,country,name,contact,isDependent,relationship,blood_group,dob,weight,height) values('"+u.getEmail()+ "','"+password +"','"+ img +"','"+country+"','"+u.getName()+"',"+u.getContact()+",'"+u.getIsDependent() +"','"+u.getRelationship()+"','"+u.getBlood_group()+"',to_date('"+u.getDob()+"','yyyy/mm/dd'),"+u.getWeight()+","+u.getHeight()+")";
+		String getdependentid="select id from users where email_id='"+u.getEmail()+"'";
+				int rs = st.executeUpdate(dependentadd);
+				ResultSet rs1 = st.executeQuery(getdependentid);
+				while(rs1.next()) {
+					int id =rs1.getInt("id");					
+					String relation="insert into Relations values("+id+","+u.getId()+")";
+					int r = st.executeUpdate(relation);
+					
+				s=true;
+				}
+				
+		
+            }
+	catch(SQLIntegrityConstraintViolationException e)
+	{
+		try {
+			u.setIsDependent("YES");	
+		String update ="Update users set relationship='"+u.getRelationship()+"',isDependent='"+u.getIsDependent()+"',name='"+u.getName()+"',contact="+u.getContact()+",blood_group='"+u.getBlood_group()+"',dob=to_date('"+u.getDob()+"','yyyy/mm/dd'),weight="+u.getWeight()+",height="+u.getHeight()+" where email_id='"+u.getEmail()+"'";
+		
+	          int x=st.executeUpdate(update);
+	          s=true;
+	            }
+		catch(Exception ex) {
+	            	System.out.println(ex);
+	            	
+	                   
+	            }
 		
 	}
+	catch(Exception ex) {
+		
+            	System.out.println(ex);
+            	       
+	
+	
+}
+	return s;
+		
+	}
+	
 		
 
+	}
+	@Override
+	public List<User> viewDependents(User u) {
+		List<User> user = new ArrayList<>();
+		try {
+			String dependents="select dependent_id from relations where user_id="+u.getId();
+			ResultSet rs1 = st.executeQuery(dependents);
+			while(rs1.next())
+			{
+				
+				String dependent = "select name,email_id,imageUrl,country,isDependent,relationship,contact,blood_group,dob,weight,height from users where id="+rs1.getInt("dependent_id")+" and relationship='"+u.getRelationship()+"'";
+				
+				ResultSet rs = st.executeQuery(dependent);
+						
+			
+			while(rs.next()) {
+				
+		        
+		        String name = rs.getString("name");
+		        
+		        String email1 = rs.getString("email_id");
+		        
+		        String imageUrl = rs.getString("imageUrl");
+		        
+		        String country = rs.getString("country");
+		        
+		        String isDependent = rs.getString("isDependent");
+		        
+		        String relationship = rs.getString("relationship");
+		        
+		        long contact = rs.getLong("contact");
+		        
+		        String blood_group = rs.getString("blood_group");
+		        
+		        String dob = rs.getString("dob");
+		        
+		        int weight = rs.getInt("weight");
+		        
+		        int height = rs.getInt("height");
+		        user.add(new User(u.getId(),name,email1,imageUrl,country,isDependent,relationship,contact,blood_group,dob,weight,height));
+		      }
+			}
+		}catch(Exception ex) {
+			System.out.println(ex);
+		}
+		return user;
+		
+		
+	}
 }

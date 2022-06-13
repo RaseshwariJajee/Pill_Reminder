@@ -55,6 +55,14 @@ public class UserController {
 		        
         return impl.Edit(u);
   }
+	@CrossOrigin
+	@PostMapping("/dependent")
+	public List<User> ViewDependents(@RequestBody User u) {
+		        
+        return impl.ViewDependents(u);
+  }
+	
+	
 	
 	
     

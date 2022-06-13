@@ -14,7 +14,7 @@
      <script src="MyProfile.js"></script>
    </head>
    
-<body >
+<body>
   <div class="sidebar">
     <div class="logo-details">
         <i class='bx bx-menu sidebarBtn'></i>
@@ -22,13 +22,13 @@
     </div>
       <ul class="nav-links">
         <li>
-          <a href="Home.html" >
+          <a href="Home.html">
             <i class='bx bx-home' ></i>
             <span class="links_name">Home</span>
           </a>
         </li>
         <li>
-          <a href="MyProfile.html" class="active">
+          <a href="MyProfile.html"  class="active">
             <i class='bx bx-user' ></i>
             <span class="links_name">My Profile</span>
           </a>
@@ -70,7 +70,18 @@
           <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
         </div>
         <div style="text-align: left; margin-top: 10px; margin-left: 30px;">
-          <div id="div2 "></div>
+          <label>Relation</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <select id="mydeplist" class="mySelect"> 
+            <option value="" disabled selected hidden>View Dependent</option>
+        <option value="SELF">Self</option> 
+        <option value="MOTHER">Mother</option> 
+        <option value="FATHER">Father</option> 
+        <option value="SPOUSE">Spouse</option> 
+        <option value="FATHER-IN-LAW">Father-in-law</option>
+        <option value="MOTHER-IN-LAW">Mother-in-law</option>
+        <option value="SON">Son</option>
+        <option value="DAUGHTER">Daughter</option>
+        </select><br><br>
           <label>Name</label>&nbsp;&nbsp;&nbsp;&nbsp;
           <input type="text" id="name" placeholder="Enter Your Name" required>
           <div class="underline"></div><br>
@@ -81,38 +92,33 @@
           <input type="text" id="contact" placeholder="Enter Your Contact" required>
           <div class="underline"></div><br>
           <label>Blood Group</label>&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="text" id="blood_group" placeholder="Enter Blood Group" required>
-          <div class="underline"></div><br>
+          <select id="mybglist" class="mySelect"> 
+            <option value="" disabled selected hidden>Blood Group</option>
+            <option value="O+">O+</option> 
+            <option value="O-">O-</option> 
+            <option value="A+">A+</option> 
+            <option value="A-">A-</option> 
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+          </select>
+         </div><br>
           <label>Date of Birth</label>&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="text" id="dob" placeholder="Enter Date of Birth" required>
-          <div class="underline"></div><br>
-          <label>Weight</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="dob" placeholder="Enter DOB" required>
+          <div class="underline">
+          </div><br>
+          <label>Weight (kg)</label>&nbsp;&nbsp;&nbsp;&nbsp;
           <input type="text" id="weight" placeholder="Enter Weight" required>
           <div class="underline"></div><br>
-          <label>Height</label>&nbsp;&nbsp;&nbsp;&nbsp;
+          <label>Height (cm)</label>&nbsp;&nbsp;&nbsp;&nbsp;
           <input type="text" id="height" placeholder="Enter Height" required>
           <div class="underline"></div><br>
         </div>
       </div>
     </div>
       <br><br>
-      <div style="margin-left: 400px; margin-top: -530px;">
-      <div class="container">
-        <div class="cover-photo">
-          <img src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80" class="profile">
-        </div>
-        <div style="text-align: left; margin-top: 10px; margin-left: 30px;">
-           <label>Relation</label><br><br>
-          <label>Name</label><br><br>
-          <label>Email Address</label><br><br>
-          <label>Contact Number</label><br><br>
-          <label>Blood Group</label><br><br>
-          <label>Date of Birth</label><br><br>
-          <label>Weight</label><br><br>
-          <label>Height</label>
-        </div>
-      </div>
-    </div>
+      
     <br><br>
     <div>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -130,25 +136,40 @@
        
         <button class="input1" id="b1" type="button" >Cancel</button>
       </div>
-    <div class="dep" style="margin-left: 1100px; margin-top: -450px;">
-      <select class="mySelect"> 
+    <div class="dep" style="margin-left: 800px; margin-top: -600px;" id="dep">
+      <select id="mydeplist1" class="mySelect"> 
         <option value="" disabled selected hidden>View Dependent</option>
-        <option value="self">SELF</option> 
-        <option value="mother">Mother</option> 
-        <option value="father">Father</option> 
-        <option value="spouse">Spouse</option> 
-        <option value="father-in-law">Father-in-law</option>
-        <option value="mother-in-law">Mother-in-law</option>
-        <option value="son">Son</option>
-        <option value="daughter">Daughter</option>
+        
+        <option value="MOTHER">Mother</option> 
+        <option value="FATHER">Father</option> 
+        <option value="SPOUSE">Spouse</option> 
+        <option value="FATHER-IN-LAW">Father-in-law</option>
+        <option value="MOTHER-IN-LAW">Mother-in-law</option>
+        <option value="SON">Son</option>
+        <option value="DAUGHTER">Daughter</option>
     </select>
-    <br><br><br>
-    <button style="width: 150px; height: 50px; color: gray;" type="button" >Add Dependent</button>
+    </div>
+    <div>
+      <br>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <button class="input1" style="width: 150px; height: 50px; " type="button" onclick="adddep();" >Add Dependent</button>
     
 </div>
 
 </section>
-
  
   <script>
    let sidebar = document.querySelector(".sidebar");

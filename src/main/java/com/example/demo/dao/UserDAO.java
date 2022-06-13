@@ -9,4 +9,7 @@ public interface UserDAO {
 	public Boolean resetPassword(User u);	
 	public Boolean editUser(User u);
 	public List<User> getDetails(String email);
+	
+	public List<User> viewDependents(User u);
+	
 }

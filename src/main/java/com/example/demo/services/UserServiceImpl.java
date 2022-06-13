@@ -102,6 +102,24 @@ Boolean s;
          }
 		
 	}
+	@Override
+	public List<User> ViewDependents(User u) {
+
+		
+        
+        UserDAOImpl c=new UserDAOImpl();
+       
+        if(!c.connect()) {
+            System.out.println("Error in establishing Connection");
+            
+     }
+        List<User> userDetails=c.viewDependents(u);
+         
+         return userDetails;
+		
+		
+	}
+ 
 
 	
 	
