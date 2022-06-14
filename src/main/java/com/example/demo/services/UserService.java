@@ -14,5 +14,6 @@ public interface UserService {
 	public List<User> Details(String email);
 	
 	public List<User> ViewDependents(User u);
+	public int getuserid(String email);
 	
 }

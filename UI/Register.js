@@ -7,10 +7,27 @@ $(document).ready(function() {
                 if ($("#password1").val() != $("#password2").val()) {
                     alert("Passwords do not match.");
                     valid=0;
-
-                    
                 }
-                
+
+                if($('#email_id').val() == null || $('#email_id').val() == ""){
+                    alert("Email is Required.");
+                    valid=0;
+                }else if($('#password1').val() == null || $('#password1').val() == ""){
+                    alert("Password is Required.");
+                    valid=0;
+                }else if($('#country').val() == null || $('#country').val() == ""){
+                    alert("Country is Required.");
+                    valid=0;
+                }else if($('#name').val() == null || $('#name').val() == ""){
+                    alert("Name is Required.");
+                    valid=0;
+                }else if($('#contact').val() == 0 || ($('#contact').val()).length < 10){
+                    alert("Contact is Required.");
+                    valid=0;
+                }else if($('#dob').val() == null || $('#dob').val() == ""){
+                    alert("Date of Birth is Required.");
+                    valid=0;
+                }
             
         
             if(valid==1){

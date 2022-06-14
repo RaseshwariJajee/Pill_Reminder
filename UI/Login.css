@@ -17,6 +17,10 @@ html, body{
   background: #008080;
 
 }
+.required input:after {
+  content:" *";
+  color: red;
+}
 .container{
   background: #fff;
   max-width: 500px;

@@ -61,6 +61,11 @@ public class UserController {
 		        
         return impl.ViewDependents(u);
   }
+	@CrossOrigin
+	@PostMapping("/iduser/{email}")
+	public int userId(@PathVariable String email) {
+		return impl.getuserid(email);
+	}
 	
 	
 	

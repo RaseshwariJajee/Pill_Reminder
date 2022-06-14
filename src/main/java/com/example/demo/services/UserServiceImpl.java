@@ -119,6 +119,20 @@ Boolean s;
 		
 		
 	}
+
+	@Override
+	public int getuserid(String email) {
+		  UserDAOImpl c=new UserDAOImpl();
+	       
+	        if(!c.connect()) {
+	            System.out.println("Error in establishing Connection");
+	            
+	     }
+	        int foundid=c.viewid(email);
+	         
+	         return foundid;
+			
+	}
  
 
 	

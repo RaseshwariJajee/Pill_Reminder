@@ -11,10 +11,28 @@ public class MedicineSchedule {
 	private int doasge_feq;
 	private String dosage_time;
 	private String email_notify;
+	private String relationship;
 	
 	public MedicineSchedule() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public MedicineSchedule(int user_id, String illness, String doctor_details, String medicine_details,
+			String start_date, String end_date, String dosage_amount, int doasge_feq, String dosage_time,
+			String email_notify,String relationship) {
+		super();
+		this.user_id = user_id;
+		this.illness = illness;
+		this.doctor_details = doctor_details;
+		this.medicine_details = medicine_details;
+		this.start_date = start_date;
+		this.end_date = end_date;
+		this.dosage_amount = dosage_amount;
+		this.doasge_feq = doasge_feq;
+		this.dosage_time = dosage_time;
+		this.email_notify = email_notify;
+		this.relationship= relationship;
 	}
 
 	public MedicineSchedule(int user_id, String illness, String doctor_details, String medicine_details,
@@ -31,6 +49,20 @@ public class MedicineSchedule {
 		this.doasge_feq = doasge_feq;
 		this.dosage_time = dosage_time;
 		this.email_notify = email_notify;
+	}
+	
+	public MedicineSchedule(int user_id, String relationship) {
+		super();
+		this.user_id = user_id;
+		this.relationship = relationship;
+	}
+
+	public String getRelationship() {
+		return relationship;
+	}
+
+	public void setRelationship(String relationship) {
+		this.relationship = relationship;
 	}
 
 	public int getUser_id() {

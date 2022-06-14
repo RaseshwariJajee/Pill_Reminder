@@ -3,6 +3,7 @@ package com.example.demo.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -278,6 +279,27 @@ else
 		}
 		return user;
 		
+		
+	}
+	@Override
+	public int viewid(String email) {
+		int id2=0;
+		try {
+			st=con.createStatement();
+			String sql = "select id from users where email_id='"+email+"'";
+			System.out.println(sql);
+			//System.out.println(rs);
+			ResultSet rs = st.executeQuery(sql);
+			while(rs.next()) {
+		
+				id2 = rs.getInt("id");
+				System.out.println(id2);
+			}
+		}catch(Exception ex) {
+			
+		}
+
+		return id2;
 		
 	}
 }

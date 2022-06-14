@@ -11,5 +11,6 @@ public interface UserDAO {
 	public List<User> getDetails(String email);
 	
 	public List<User> viewDependents(User u);
+	public int viewid(String email);
 	
 }

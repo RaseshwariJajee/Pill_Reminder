@@ -4,31 +4,43 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dao.MedicineScheduleImpl;
 import com.example.demo.entities.MedicineSchedule;
+import com.example.demo.entities.User;
+import com.example.demo.services.MedicineScheduleServiceImpl;
 
 @RestController
 public class MedicineScheduleController {
-	MedicineScheduleImpl mdImpl = new MedicineScheduleImpl();
+	MedicineScheduleServiceImpl mdImpl = new MedicineScheduleServiceImpl();
 	
 	@CrossOrigin
     @GetMapping("/home")
     public List<MedicineSchedule> checkhistory(){	
 		
-			mdImpl.connect();
+			
 		
-			return mdImpl.DisplaySchedule();
+			return mdImpl.ScheduleDisplay();
 			
 		}
 	
+	
+	
 	@CrossOrigin
-    @PostMapping("/medicalhistory")
-	public List<MedicineSchedule> displayMedicalHistory(@RequestBody String useremailid){
-		mdImpl.connect();
-		return mdImpl.displayMedicalHistory(useremailid);
+    @PostMapping("/medicalhistory/{useremailid}")
+	public List<MedicineSchedule> displayMedicalHistory(@PathVariable String useremailid){
+		return mdImpl.displayMedicalhistory(useremailid);
 	}
+	
+	@CrossOrigin
+	@PostMapping("/viewmedicalhis")
+	public List<MedicineSchedule> ViewHistory(@RequestBody MedicineSchedule u) {
+		        
+        return mdImpl.ViewMedical_his(u);
+  }
 }
