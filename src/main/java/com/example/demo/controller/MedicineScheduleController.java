@@ -43,4 +43,10 @@ public class MedicineScheduleController {
 		        
         return mdImpl.ViewMedical_his(u);
   }
+	@CrossOrigin
+	@PostMapping("/addmedicalhis")
+	public String AddHistory(@RequestBody MedicineSchedule u) {
+		        
+        return mdImpl.AddMedical_his(u);
+  }
 }

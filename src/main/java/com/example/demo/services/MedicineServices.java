@@ -8,4 +8,5 @@ public interface MedicineServices {
 	public List<MedicineSchedule> ScheduleDisplay();
 	public List<MedicineSchedule> displayMedicalhistory(String useremailid);
 	public List<MedicineSchedule> ViewMedical_his(MedicineSchedule u);
+	public String AddMedical_his(MedicineSchedule u);
 }

@@ -8,4 +8,5 @@ public interface MedicineScheduleDAO {
 	public List<MedicineSchedule> DisplaySchedule();
 	public List<MedicineSchedule> displayMedicalHistory(String useremailid);
 	public List<MedicineSchedule> ViewMed_his(MedicineSchedule u);
+	public Boolean MedicalUser(MedicineSchedule u);
 }

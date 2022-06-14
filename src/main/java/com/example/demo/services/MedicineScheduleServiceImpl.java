@@ -20,7 +20,7 @@ public class MedicineScheduleServiceImpl implements MedicineServices{
             
      }
         List<MedicineSchedule> listusers = md.DisplaySchedule();
-        System.out.println(listusers);
+      //  System.out.println(listusers);
          return listusers;
 	}
 
@@ -35,7 +35,7 @@ public class MedicineScheduleServiceImpl implements MedicineServices{
             
      }
         List<MedicineSchedule> listhistory = md.displayMedicalHistory(useremailid);
-        System.out.println(listhistory);
+      //  System.out.println(listhistory);
         return listhistory;
 	}
 
@@ -50,12 +50,38 @@ public class MedicineScheduleServiceImpl implements MedicineServices{
             System.out.println("Error in establishing Connection");
             
      }
-        System.out.println("hi");
+       // System.out.println("hi");
         List<MedicineSchedule> listmedhistory = md.ViewMed_his(u);
-        System.out.println(listmedhistory);
+       // System.out.println(listmedhistory);
    
          
          return listmedhistory;
+		
+
+	}
+
+	@Override
+	public String AddMedical_his(MedicineSchedule u) {
+		Boolean s;
+		
+        
+		MedicineScheduleImpl md =new MedicineScheduleImpl();
+       
+        if(!md.connect()) {
+            System.out.println("Error in establishing Connection");
+            
+     }
+        s=md.MedicalUser(u);
+        
+        if(s==true) {
+     	   return "Added";
+        }
+        else {
+     	   return "Unable to Add";
+        }
+        
+         
+        
 		
 
 	}

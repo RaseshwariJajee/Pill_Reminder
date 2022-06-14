@@ -52,7 +52,7 @@
                 
                 var obj={
                         "user_id":usersDataint,
-                        "relationship":$('#mydeplist1').val(),          
+                        "relation":$('#mydeplist1').val(),          
                     
                 };
                 $.ajax({
